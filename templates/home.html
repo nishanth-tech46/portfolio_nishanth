@@ -1,0 +1,540 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-background">
+        <div class="hero-grid"></div>
+        <div class="hero-code-snippet">
+            <span class="code-keyword">def</span> <span class="code-function">build_future</span>():
+            <br>
+            <span class="code-indent">    </span><span class="code-keyword">return</span> <span class="code-string">"Python + Django + Full Stack"</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-name">Nishanth K</span>
+            </h1>
+            
+            <h2 class="hero-subtitle">Python Developer & Full Stack Developer</h2>
+            
+            <p class="hero-description">
+                Building web applications, REST APIs and backend systems with Python, Django and Flask.
+            </p>
+            
+            <p class="hero-technologies">
+                Python • Django • Flask • REST APIs • MySQL
+            </p>
+            
+            <div class="hero-tech-badges">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Django</span>
+                <span class="tech-badge">Flask</span>
+                <span class="tech-badge">REST API</span>
+                <span class="tech-badge">MySQL</span>
+            </div>
+            
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+            
+            <div class="hero-social">
+                {% if github_url %}
+                <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                    <i data-lucide="github"></i>
+                </a>
+                {% endif %}
+                {% if linkedin_url %}
+                <a href="{{ linkedin_url }}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                    <i data-lucide="linkedin"></i>
+                </a>
+                {% endif %}
+                <a href="mailto:{{ contact_email }}" class="social-link" aria-label="Email">
+                    <i data-lucide="mail"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Currently Focused On Section -->
+<section class="currently-focused">
+    <div class="container">
+        <div class="focused-content">
+            <span class="focused-label">Currently Focused On</span>
+            <div class="focused-badges">
+                <span class="focused-badge">Python</span>
+                <span class="focused-badge">Django</span>
+                <span class="focused-badge">REST APIs</span>
+                <span class="focused-badge">MySQL</span>
+                <span class="focused-badge">Full Stack Development</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-intro">
+                <p>
+                    I am a Computer Science and Engineering graduate focused on Python and full-stack web development. I enjoy building practical web applications, backend systems and REST APIs using Django, Flask and modern web technologies.
+                </p>
+            </div>
+            
+            <div class="developer-focus-card">
+                <h3 class="developer-focus-title">Developer Focus</h3>
+                <ul class="developer-focus-list">
+                    <li><span class="focus-icon">🐍</span> Python Development</li>
+                    <li><span class="focus-icon">⚙️</span> Django & Flask</li>
+                    <li><span class="focus-icon">🌐</span> Full Stack Web Development</li>
+                    <li><span class="focus-icon">🔗</span> REST API Development</li>
+                    <li><span class="focus-icon">🗄️</span> MySQL & SQLite</li>
+                    <li><span class="focus-icon">💻</span> Practical Software Solutions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Skills</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="skills-grid">
+            <!-- Programming -->
+            <div class="skill-category">
+                <h3 class="skill-category-title">Programming</h3>
+                <div class="skill-cards">
+                    <div class="skill-card">
+                        <i data-lucide="code-2"></i>
+                        <span>Python</span>
+                        <span class="skill-desc">Backend development</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="file-code"></i>
+                        <span>C</span>
+                        <span class="skill-desc">System programming</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="file-code-2"></i>
+                        <span>C++</span>
+                        <span class="skill-desc">Object-oriented</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Backend -->
+            <div class="skill-category">
+                <h3 class="skill-category-title">Backend</h3>
+                <div class="skill-cards">
+                    <div class="skill-card">
+                        <i data-lucide="server"></i>
+                        <span>Django</span>
+                        <span class="skill-desc">Python web framework</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="flask-conical"></i>
+                        <span>Flask</span>
+                        <span class="skill-desc">Micro framework</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="api"></i>
+                        <span>Django REST</span>
+                        <span class="skill-desc">API development</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="lock"></i>
+                        <span>JWT</span>
+                        <span class="skill-desc">Authentication</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Frontend -->
+            <div class="skill-category">
+                <h3 class="skill-category-title">Frontend</h3>
+                <div class="skill-cards">
+                    <div class="skill-card">
+                        <i data-lucide="layout"></i>
+                        <span>HTML</span>
+                        <span class="skill-desc">Structure</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="palette"></i>
+                        <span>CSS</span>
+                        <span class="skill-desc">Styling</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="script"></i>
+                        <span>JavaScript</span>
+                        <span class="skill-desc">Interactivity</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Database -->
+            <div class="skill-category">
+                <h3 class="skill-category-title">Database</h3>
+                <div class="skill-cards">
+                    <div class="skill-card">
+                        <i data-lucide="database"></i>
+                        <span>MySQL</span>
+                        <span class="skill-desc">Relational DB</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="database-zap"></i>
+                        <span>SQLite</span>
+                        <span class="skill-desc">Embedded DB</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="table"></i>
+                        <span>MySQL Workbench</span>
+                        <span class="skill-desc">DB management</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- APIs -->
+            <div class="skill-category">
+                <h3 class="skill-category-title">APIs</h3>
+                <div class="skill-cards">
+                    <div class="skill-card">
+                        <i data-lucide="link"></i>
+                        <span>REST API</span>
+                        <span class="skill-desc">Web services</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools -->
+            <div class="skill-category">
+                <h3 class="skill-category-title">Tools</h3>
+                <div class="skill-cards">
+                    <div class="skill-card">
+                        <i data-lucide="git-branch"></i>
+                        <span>Git</span>
+                        <span class="skill-desc">Version control</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="github"></i>
+                        <span>GitHub</span>
+                        <span class="skill-desc">Code hosting</span>
+                    </div>
+                    <div class="skill-card">
+                        <i data-lucide="cloud"></i>
+                        <span>Netlify</span>
+                        <span class="skill-desc">Deployment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="projects-section">
+            {% for project in all_projects %}
+            {% if forloop.first and project.featured %}
+            <!-- Featured Project -->
+            <div class="featured-project">
+                <div class="featured-project-content">
+                    <h3 class="featured-project-title">{{ project.title }}</h3>
+                    <p class="featured-project-description">{{ project.description }}</p>
+                    
+                    <div class="featured-project-technologies">
+                        {% for tech in project.get_technologies_list|slice:":5" %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="featured-project-links">
+                        <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary">
+                            <i data-lucide="info"></i> View Details
+                        </a>
+                        {% if project.github_repository %}
+                        {% if github_username %}
+                        <a href="https://github.com/{{ github_username }}/{{ project.github_repository }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <i data-lucide="github"></i> GitHub
+                        </a>
+                        {% endif %}
+                        {% elif project.github_url %}
+                        <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <i data-lucide="github"></i> GitHub
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            
+            <!-- Other Projects Grid -->
+            <div class="projects-grid">
+                {% for project in all_projects %}
+                {% if not forloop.first or not project.featured %}
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">{{ project.title }}</h3>
+                        <p class="project-description">{{ project.description }}</p>
+                        
+                        <div class="project-technologies">
+                            {% for tech in project.get_technologies_list|slice:":4" %}
+                            <span class="tech-tag">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="{% url 'project_detail' project.slug %}" class="btn btn-sm btn-secondary">
+                                <i data-lucide="info"></i> View Details
+                            </a>
+                            {% if project.github_repository %}
+                            {% if github_username %}
+                            <a href="https://github.com/{{ github_username }}/{{ project.github_repository }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                                <i data-lucide="github"></i>
+                            </a>
+                            {% endif %}
+                            {% elif project.github_url %}
+                            <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                                <i data-lucide="github"></i>
+                            </a>
+                            {% endif %}
+                            {% if project.live_url %}
+                            <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                                <i data-lucide="external-link"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Certifications</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="certifications-grid">
+            {% for cert in certifications %}
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i data-lucide="award"></i>
+                </div>
+                <h3 class="cert-title">{{ cert.name }}</h3>
+                <p class="cert-issuer">{{ cert.issuer }}</p>
+                {% if cert.certificate_url %}
+                <a href="{{ cert.certificate_url }}" target="_blank" rel="noopener noreferrer" class="cert-link">
+                    View Certificate <i data-lucide="external-link" class="inline-icon"></i>
+                </a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Education</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="education-timeline">
+            <div class="education-card education-primary">
+                <div class="education-icon">
+                    <i data-lucide="graduation-cap"></i>
+                </div>
+                <div class="education-content">
+                    <h3 class="education-degree">B.E. Computer Science and Engineering</h3>
+                    <p class="education-institution">Global Institute of Engineering and Technology</p>
+                    <p class="education-location">Melvisharam, Ranipet</p>
+                    <p class="education-university">Anna University</p>
+                    <p class="education-cgpa">CGPA: 7.8</p>
+                </div>
+            </div>
+            
+            <div class="education-timeline-connector"></div>
+            
+            <div class="education-card education-secondary">
+                <div class="education-icon">
+                    <i data-lucide="book-open"></i>
+                </div>
+                <div class="education-content">
+                    <h3 class="education-degree">Higher Secondary Education — 12th</h3>
+                    <p class="education-institution">Don Bosco Higher Secondary School</p>
+                    <p class="education-location">Varadharajanpet, Ariyalur</p>
+                    <p class="education-marks">Marks: 380 / 600</p>
+                    <p class="education-percentage">Percentage: 63.33%</p>
+                </div>
+            </div>
+            
+            <div class="education-timeline-connector"></div>
+            
+            <div class="education-card education-secondary">
+                <div class="education-icon">
+                    <i data-lucide="book"></i>
+                </div>
+                <div class="education-content">
+                    <h3 class="education-degree">Secondary Education — 10th</h3>
+                    <p class="education-institution">Annai Theresa Matriculation School</p>
+                    <p class="education-location">Jayankondam, Ariyalur</p>
+                    <p class="education-marks">Marks: 411 / 500</p>
+                    <p class="education-percentage">Percentage: 82.2%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GitHub Section -->
+<section id="github" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">GitHub</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="github-content">
+            <div class="github-cta">
+                <h3 class="github-cta-title">Explore My GitHub</h3>
+                <p class="github-cta-description">Explore my repositories, projects and development work.</p>
+                {% if github_url %}
+                <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer" class="github-cta-btn">
+                    Visit GitHub <i data-lucide="arrow-right"></i>
+                </a>
+                {% else %}
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-cta-btn">
+                    Visit GitHub <i data-lucide="arrow-right"></i>
+                </a>
+                {% endif %}
+            </div>
+            
+            {% if github_username %}
+            <div class="github-repos">
+                <h4 class="github-repos-title">Selected Repositories</h4>
+                <div class="github-repos-list">
+                    <a href="https://github.com/{{ github_username }}/e_learining_site" target="_blank" rel="noopener noreferrer" class="github-repo-card">
+                        <i data-lucide="github"></i>
+                        <span>e_learining_site</span>
+                    </a>
+                    <a href="https://github.com/{{ github_username }}/Malware-intelligence-using-csv-files" target="_blank" rel="noopener noreferrer" class="github-repo-card">
+                        <i data-lucide="github"></i>
+                        <span>Malware-intelligence-using-csv-files</span>
+                    </a>
+                    <a href="https://github.com/{{ github_username }}/Library_management" target="_blank" rel="noopener noreferrer" class="github-repo-card">
+                        <i data-lucide="github"></i>
+                        <span>Library_management</span>
+                    </a>
+                    <a href="https://github.com/{{ github_username }}/student_management" target="_blank" rel="noopener noreferrer" class="github-repo-card">
+                        <i data-lucide="github"></i>
+                        <span>student_management</span>
+                    </a>
+                    <a href="https://github.com/{{ github_username }}/quizzes_compatation" target="_blank" rel="noopener noreferrer" class="github-repo-card">
+                        <i data-lucide="github"></i>
+                        <span>quizzes_compatation</span>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>I'm open to opportunities where I can contribute to real-world Python and full-stack development projects.</p>
+                
+                <div class="contact-details">
+                    {% if github_url %}
+                    <div class="contact-item">
+                        <i data-lucide="github"></i>
+                        <a href="{{ github_url }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                    {% endif %}
+                    {% if linkedin_url %}
+                    <div class="contact-item">
+                        <i data-lucide="linkedin"></i>
+                        <a href="{{ linkedin_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                    {% endif %}
+                    <div class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper">
+                <form id="contactForm" class="contact-form">
+                    {% csrf_token %}
+                    
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i data-lucide="send"></i> Send Message
+                    </button>
+                </form>
+                
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

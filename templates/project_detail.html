@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="project-detail-section">
+    <div class="container">
+        <a href="#projects" class="back-link" onclick="goBackToProjects(event)">
+            <i data-lucide="arrow-left"></i> Back to Projects
+        </a>
+        
+        <div class="project-detail-header">
+            <h1 class="project-detail-title">{{ project.title }}</h1>
+            <p class="project-detail-description">{{ project.description }}</p>
+            <div class="project-detail-technologies">
+                {% for tech in project.get_technologies_list %}
+                <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="project-detail-content">
+            <div class="project-detail-section">
+                <h2>Project Overview</h2>
+                <p>{{ project.detailed_description|default:project.description }}</p>
+            </div>
+            
+            <div class="project-detail-section">
+                <h2>Problem</h2>
+                {% if project.title == 'E-Learning Platform' %}
+                <p>Managing courses, learning materials and user access across separate systems can make online learning difficult to organize.</p>
+                {% elif project.title == 'Malware Intelligence Using CSV Files' %}
+                <p>Identifying potentially malicious applications can involve analyzing a large number of application-related features. Manual analysis can be difficult to scale, creating an opportunity to explore machine-learning-based classification.</p>
+                {% elif project.title == 'Library Management System' %}
+                <p>Managing library information manually or through disconnected records can be inefficient. Librarians need a digital system to organize books, track inventory, and manage library operations efficiently.</p>
+                {% elif project.title == 'Student Management System' %}
+                <p>Manually maintaining student information and grades can be time-consuming and error-prone. Educational institutions need a structured digital solution to organize student records and track academic performance.</p>
+                {% elif project.title == 'Quiz Competition' %}
+                <p>Creating and administering quizzes manually can be cumbersome. There is a need for an interactive digital platform that allows quiz creation, administration, and automated scoring with detailed result analysis.</p>
+                {% else %}
+                <p>This project addresses the need for efficient and practical solutions in its domain. The implementation focuses on solving real-world challenges through systematic development and testing.</p>
+                {% endif %}
+            </div>
+            
+            <div class="project-detail-section">
+                <h2>Solution</h2>
+                {% if project.title == 'E-Learning Platform' %}
+                <p>A centralized web application for managing and accessing learning content through a structured learning platform.</p>
+                {% elif project.title == 'Malware Intelligence Using CSV Files' %}
+                <p>Developed a machine-learning workflow that processes CSV-based application data, prepares the dataset for analysis, trains classification models (Random Forest and Support Vector Classifier), and uses the trained models for prediction. The implementation includes the complete code workflow for data processing and model training.</p>
+                {% elif project.title == 'Library Management System' %}
+                <p>Built a Django-based web application with a library_project app to manage library information. The system uses SQLite for database storage, includes a books folder for book-related data, and provides a structured interface through templates and static files for working with library records.</p>
+                {% elif project.title == 'Student Management System' %}
+                <p>Created a Python-based system with multiple components (grade_system, secondproject, web-grade-system) for managing student grades. The application includes a Python script for grade management, comprehensive project documentation, and focuses on grade tracking and student record organization.</p>
+                {% elif project.title == 'Quiz Competition' %}
+                <p>Built a comprehensive Django-based quiz application with an admin panel for quiz and question management, and a user-facing quiz module. The system includes a dashboard with statistics, quiz management with time limits, question management with multiple-choice options, timer countdown, auto-submit, detailed results with scoring and grades, and quiz history.</p>
+                {% else %}
+                <p>The application provides a comprehensive solution through well-architected code, user-friendly interfaces, and robust functionality. The approach emphasizes maintainability and scalability.</p>
+                {% endif %}
+            </div>
+            
+            <div class="project-detail-section">
+                <h2>Key Features</h2>
+                <ul class="project-features-list">
+                    {% for feature in project.get_features_list %}
+                    <li>{{ feature }}</li>
+                    {% empty %}
+                    <li>Features will be updated soon.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="project-detail-section">
+                <h2>Technologies Used</h2>
+                <div class="project-technologies">
+                    {% for tech in project.get_technologies_list %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="project-detail-section">
+                <h2>Technical Implementation</h2>
+                {% if project.title == 'E-Learning Platform' %}
+                <p>The project uses Django with multiple apps (learnapp, learnproject, secondapp) to handle different aspects of the learning system. The backend uses SQLite for data persistence. The frontend is built with Django templates, HTML5, CSS3, and JavaScript. Static files are managed through the static directory, and course files are stored in the media/course_files directory. The application follows Django's MVT (Model-View-Template) architecture for organized code structure.</p>
+                {% elif project.title == 'Malware Intelligence Using CSV Files' %}
+                <p>The project uses Python with Pandas for data manipulation and NumPy for numerical operations. Scikit-learn is used for machine learning model training, specifically Random Forest and Support Vector Classifier. The workflow includes loading CSV datasets, preprocessing data, feature engineering, model training, model evaluation, and prediction. The implementation is structured in the FULL CODE directory with organized Python scripts for each step of the machine learning pipeline.</p>
+                {% elif project.title == 'Library Management System' %}
+                <p>The application is built with Django using the library_project app as the main component. The backend uses SQLite for data storage through Django's ORM. The frontend uses Django templates with HTML5, CSS3, and JavaScript. The books folder contains book-related data, and static files are managed separately. The application follows Django's standard project structure with manage.py for project management and proper URL routing for different views.</p>
+                {% elif project.title == 'Student Management System' %}
+                <p>The project is implemented in Python with multiple components for different functionalities. The grade_system, secondproject, and web-grade-system components handle various aspects of student grade management. The student_grade_management.py script provides the core functionality for grade tracking. The project includes comprehensive documentation in PROJECT_DOCUMENTATION.md and focuses on Python-based grade management without a web framework.</p>
+                {% elif project.title == 'Quiz Competition' %}
+                <p>The application is built with Django using SQLite for the database. The backend handles quiz creation, question management, user authentication, and result calculation. The frontend uses Django templates with HTML5, CSS3, and JavaScript for the user interface. The system includes a timer countdown feature, auto-submit functionality, and detailed result analysis. The admin panel provides full control over quizzes and questions with search and filter capabilities. Default admin credentials are configured for easy access.</p>
+                {% else %}
+                <p>The application follows a structured architecture with proper separation of concerns. Backend logic handles data processing and business rules, while the frontend provides an intuitive user interface. Database integration ensures efficient data storage and retrieval.</p>
+                {% endif %}
+            </div>
+            
+            <div class="project-detail-section">
+                <h2>Technical Highlights</h2>
+                {% if project.title == 'E-Learning Platform' %}
+                <ul class="project-features-list">
+                    <li>Django multi-app architecture</li>
+                    <li>SQLite database integration</li>
+                    <li>Template-based frontend</li>
+                    <li>Media file management for course content</li>
+                    <li>Static file handling</li>
+                    <li>Django MVT pattern implementation</li>
+                </ul>
+                {% elif project.title == 'Malware Intelligence Using CSV Files' %}
+                <ul class="project-features-list">
+                    <li>CSV data processing with Pandas</li>
+                    <li>Machine learning model training</li>
+                    <li>Random Forest classification</li>
+                    <li>Support Vector Classifier</li>
+                    <li>Data preprocessing and feature engineering</li>
+                    <li>Model evaluation and prediction workflow</li>
+                </ul>
+                {% elif project.title == 'Library Management System' %}
+                <ul class="project-features-list">
+                    <li>Django web framework</li>
+                    <li>SQLite database with Django ORM</li>
+                    <li>Template-based frontend</li>
+                    <li>Book management system</li>
+                    <li>Static file organization</li>
+                    <li>Django URL routing</li>
+                </ul>
+                {% elif project.title == 'Student Management System' %}
+                <ul class="project-features-list">
+                    <li>Python-based grade management</li>
+                    <li>Multiple system components</li>
+                    <li>Grade tracking functionality</li>
+                    <li>Student record organization</li>
+                    <li>Comprehensive documentation</li>
+                    <li>Script-based implementation</li>
+                </ul>
+                {% elif project.title == 'Quiz Competition' %}
+                <ul class="project-features-list">
+                    <li>Django web framework</li>
+                    <li>SQLite database</li>
+                    <li>Admin panel for quiz management</li>
+                    <li>Timer countdown and auto-submit</li>
+                    <li>Detailed result analysis with scoring</li>
+                    <li>Quiz history tracking</li>
+                    <li>Search and filter functionality</li>
+                </ul>
+                {% else %}
+                <ul class="project-features-list">
+                    <li>Clean, maintainable code structure</li>
+                    <li>Responsive design for cross-device compatibility</li>
+                    <li>Efficient data handling and processing</li>
+                    <li>User-centered interface design</li>
+                    <li>Proper error handling and validation</li>
+                </ul>
+                {% endif %}
+            </div>
+            
+            <div class="project-detail-section">
+                <h2>My Contribution</h2>
+                {% if project.title == 'E-Learning Platform' %}
+                <p>Designed and developed the Django-based e-learning platform with multiple apps, implemented the project structure, set up SQLite database integration, created templates for the frontend, and configured media file management for course content.</p>
+                {% elif project.title == 'Malware Intelligence Using CSV Files' %}
+                <p>Developed the machine-learning workflow for malware classification, implemented data preprocessing with Pandas, trained Random Forest and Support Vector Classifier models using Scikit-learn, and created the complete code structure for the prediction pipeline.</p>
+                {% elif project.title == 'Library Management System' %}
+                <p>Built the Django-based library management system, implemented the library_project app, set up SQLite database integration, created templates for the interface, and organized the book management functionality.</p>
+                {% elif project.title == 'Student Management System' %}
+                <p>Developed the Python-based student grade management system, implemented the grade tracking functionality, created the student_grade_management.py script, and documented the project comprehensively.</p>
+                {% elif project.title == 'Quiz Competition' %}
+                <p>Built the Django-based quiz application, implemented the admin panel for quiz and question management, created the user-facing quiz module with timer and auto-submit, developed the result analysis system, and configured the dashboard with statistics.</p>
+                {% else %}
+                <p>Designed and developed the application, implemented the core functionality, integrated the database, and worked on the user interface and backend logic.</p>
+                {% endif %}
+            </div>
+            
+            <div class="project-detail-section">
+                <h2>GitHub Repository</h2>
+                {% if project.github_url %}
+                <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <i data-lucide="github"></i> View Source Code →
+                </a>
+                {% else %}
+                <p class="no-demo">GitHub repository link will be updated soon.</p>
+                {% endif %}
+            </div>
+            
+            <div class="project-detail-section">
+                <h2>Live Demo</h2>
+                {% if project.live_url %}
+                <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i data-lucide="external-link"></i> View Live Demo →
+                </a>
+                {% else %}
+                <p class="no-demo">Live Demo: Not currently deployed.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

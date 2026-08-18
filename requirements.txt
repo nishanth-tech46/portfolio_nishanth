@@ -1,0 +1,5 @@
+Django>=4.2,<5.0
+django-environ>=0.11.0
+
+# Note: Python 3.8-3.11 recommended for Django 4.2
+# Python 3.12+ may have test compatibility issues
