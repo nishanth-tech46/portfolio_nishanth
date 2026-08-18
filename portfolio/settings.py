@@ -22,7 +22,7 @@ SECRET_KEY = env('SECRET_KEY', default='django-insecure-change-this-in-productio
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default=True)
 
-ALLOWED_HOSTS = env('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -139,7 +139,9 @@ CONTACT_EMAIL = env('CONTACT_EMAIL', default='nishanthk.pydev@gmail.com')
   
 
 ALLOWED_HOSTS = [
-    'portfolio-nishanth-k.onrender.com',
+    'nishanthkprofile.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
+
+#ALLOWED_HOSTS = env('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
