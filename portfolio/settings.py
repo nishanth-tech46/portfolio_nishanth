@@ -136,3 +136,10 @@ GITHUB_URL = env('GITHUB_URL', default='https://github.com/nishanth-tech46')
 GITHUB_USERNAME = env('GITHUB_USERNAME', default='nishanth-tech46')
 LINKEDIN_URL = env('LINKEDIN_URL', default='https://www.linkedin.com/in/nishanthk41/')
 CONTACT_EMAIL = env('CONTACT_EMAIL', default='nishanthk.pydev@gmail.com')
+  
+
+ALLOWED_HOSTS = [
+    'portfolio-nishanth-k.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
